@@ -19,6 +19,13 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
   res.render('show', { restaurant: restaurant })
 })
 
+app.get('/search', (req, res) => {
+  let keyword = req.query.keyword.trim().toLowerCase()
+  let nameSearchResults = restaurants.results.filter(restaurant => restaurant.name.trim().toLowerCase().includes(keyword))
+  let typeSearchResults = restaurants.results.filter(restaurant => restaurant.category.trim().toLowerCase().includes(keyword))
+  res.render('index', {restaurants: nameSearchResults.length ? nameSearchResults : typeSearchResults})  
+})
+
 app.listen(port, () => {
   console.log(`This app run at http://localhost:${port}`)
 })
