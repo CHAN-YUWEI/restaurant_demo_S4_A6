@@ -15,15 +15,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants/:restaurant_id', (req, res) => {
-  let restaurant = restaurants.results.find( restaurant =>  restaurant.id.toString() === req.params.restaurant_id )
+  let restaurant = restaurants.results.find( (restaurant) =>  { return restaurant.id.toString() === req.params.restaurant_id} )
   res.render('show', { restaurant: restaurant })
 })
 
 app.get('/search', (req, res) => {
   let keyword = req.query.keyword.trim().toLowerCase()
-  let nameSearchResults = restaurants.results.filter(restaurant => restaurant.name.trim().toLowerCase().includes(keyword))
-  let typeSearchResults = restaurants.results.filter(restaurant => restaurant.category.trim().toLowerCase().includes(keyword))
-  res.render('index', {restaurants: nameSearchResults.length ? nameSearchResults : typeSearchResults})  
+  let searchResults = restaurants.results.filter(restaurant => restaurant.name.trim().toLowerCase().includes(keyword) || restaurant.category.trim().toLowerCase().includes(keyword))
+  res.render('index', {restaurants: searchResults})  
 })
 
 app.listen(port, () => {
