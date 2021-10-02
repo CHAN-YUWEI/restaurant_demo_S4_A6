@@ -1,7 +1,6 @@
 
 const express = require('express')
 const exphbs = require('express-handlebars')
-// const restaurants = require('./restaurant.json')
 const mongoose = require('mongoose')
 const Restaurant = require('./models/restaurantInfo')
 const bodyParser = require('body-parser')
@@ -92,6 +91,14 @@ app.post('/restaurants/:restaurant_id/edit', (req, res) => {
      restaurant.description = description
      return restaurant.save()
    })
+   .then(() => res.redirect('/'))
+   .catch(error => console.log(error))
+})
+
+app.post('/restaurants/:restaurant_id/delete', (req, res) => {
+  let id = req.params.restaurant_id
+  return Restaurant.findById(id)
+   .then(restaurant => restaurant.remove())
    .then(() => res.redirect('/'))
    .catch(error => console.log(error))
 })
