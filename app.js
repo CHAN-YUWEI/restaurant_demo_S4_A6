@@ -106,8 +106,8 @@ app.post('/restaurants/:restaurant_id/delete', (req, res) => {
 app.get('/search', (req, res) => {
   let keyword = req.query.keyword.trim().toLowerCase()
   Restaurant.find({ $or: [
-    {name: keyword},
-    {category: keyword},
+    { name: { $regex: keyword, $options: 'i' }},
+    { category: { $regex: keyword, $options: 'i' }},
   ]})
   .lean()
   .then( restaurants => res.render('index', { restaurants }))
