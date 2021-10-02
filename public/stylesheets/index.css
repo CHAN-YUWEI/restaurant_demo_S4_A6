@@ -57,6 +57,11 @@
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.crud-function {
+  margin: 0 0 20px 0;
+  text-align: end;
+}
+
 @media screen and (max-width: 992px) {
   
   .card img{

@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="/stylesheets/createForm.css">
+
+<form action="/restaurants" method="POST" class="create-form">
+
+ <div class="form-group row">
+  <label class="col-sm-2 col-form-label">餐廳名稱</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" name="name" placeholder="餐廳名稱">
+  </div>
+ </div>
+
+ <div class="form-group row">
+  <label class="col-sm-2 col-form-label">餐廳英文名</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" name="name_en" placeholder="餐廳英文名">
+  </div>
+ </div>
+
+ <div class="form-group row">
+  <label class="col-sm-2 col-form-label">餐廳分類</label>
+  <div class="col-sm-10">
+    <select class="custom-select my-1 mr-sm-2" name="category">
+      <option selected>選擇餐廳分類...</option>
+      <option value="1">美式</option>
+      <option value="2">義式餐廳</option>
+      <option value="3">日本料理</option>
+      <option value="4">咖啡</option>
+      <option value="5">酒吧</option>
+      <option value="6">其他</option>
+    </select>
+  </div>
+ </div>
+ 
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">餐廳照片</label>
+    <div class="col-sm-10">
+      <input type="url" class="form-control" name="image" placeholder="請填入照片網址">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">餐廳地點</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="location" placeholder="請填入餐廳門牌">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">餐廳電話</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="phone" placeholder="請填入餐廳電話號碼">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Google Map位址</label>
+    <div class="col-sm-10">
+      <input type="url" class="form-control" name="google_map" placeholder="請填入餐廳Goole Map網址">
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">餐廳評分</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="rating" placeholder="請填入餐廳評分 0-5分">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">餐廳詳述</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="description" placeholder="請詳述您對餐廳的感想">
+    </div>
+  </div>
+
+ <div class="form-group row ">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">建立餐廳</button>
+    </div>
+ </div>
+
+</form>

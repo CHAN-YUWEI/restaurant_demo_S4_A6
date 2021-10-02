@@ -4,6 +4,8 @@ header {
 
 .navbar .navbar-brand {
   color: #4592af;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar .navbar-brand:hover {
